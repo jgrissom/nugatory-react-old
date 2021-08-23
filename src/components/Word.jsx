@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
 class Word extends Component {
-  state = {  }
+  state = {
+    word: 'banana',
+    color: 'yellow',
+  }
   render() { 
-    return ( <div>Hello World!</div> );
+    return (
+      <div>
+        { this.state.word }
+      </div>
+    );
   }
 }
 
