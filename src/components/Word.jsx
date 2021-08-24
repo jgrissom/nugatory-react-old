@@ -9,9 +9,9 @@ class Word extends Component {
   renderColor(color) {
     return (color === undefined || color === null ? 'black' : color);
   }
-  handleClick() {
-    // the following will fail - we cannot access 'this' object
-    // this.state is undefined
+  handleClick = () => {
+    // convert the function to an arrow function
+    // arrow functions inherit 'this' keyword
     console.log(this.state.color);
   }
   render() { 
