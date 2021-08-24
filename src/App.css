@@ -11,3 +11,9 @@
   opacity: .8;
   font-size: 8em;
 }
+
+.Word {
+  font-size: 4em;
+  opacity: .75;
+  cursor: pointer;
+}
