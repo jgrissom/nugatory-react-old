@@ -13,6 +13,8 @@ class Word extends Component {
     // convert the function to an arrow function
     // arrow functions inherit 'this' keyword
     console.log(this.state.color);
+    // the following code will not re-render a component
+    this.state.color = 'black';
   }
   render() { 
     return (
