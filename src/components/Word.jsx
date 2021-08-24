@@ -10,7 +10,9 @@ class Word extends Component {
     return (color === undefined || color === null ? 'black' : color);
   }
   handleClick() {
-    console.log('word clicked');
+    // the following will fail - we cannot access 'this' object
+    // this.state is undefined
+    console.log(this.state.color);
   }
   render() { 
     return (
