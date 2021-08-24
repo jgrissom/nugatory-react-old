@@ -13,8 +13,9 @@ class Word extends Component {
     // convert the function to an arrow function
     // arrow functions inherit 'this' keyword
     console.log(this.state.color);
-    // the following code will not re-render a component
-    this.state.color = 'black';
+    // the setState method is inherited from the base Component class
+    // when a component's state is altered, it is re-rendered asynchronously by react
+    this.setState({ color: 'black' })
   }
   render() { 
     return (
