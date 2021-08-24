@@ -5,9 +5,13 @@ class Word extends Component {
     word: 'banana',
     color: 'yellow',
   }
+  // helper method
+  renderColor(color) {
+    return (color === undefined || color === null ? 'black' : color);
+  }
   render() { 
     return (
-      <div style={{ color:this.state.color, fontSize:'4em' }}>
+      <div style={{ color:this.renderColor(this.state.color), fontSize:'4em' }}>
         { this.state.word }
       </div>
     );
