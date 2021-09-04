@@ -6,10 +6,10 @@ class Word extends Component {
     return (color === undefined || color === null ? 'black' : color);
   }
   componentDidMount() {
-    console.log("Word mounted");
+    console.log(`hello, ${ this.props.word.word }`);
   }
   componentWillUnmount() {
-    console.log("Word unmounted");
+    console.log(`goodbye, ${ this.props.word.word }`);
   }
   render() { 
     const { onDelete, word } = this.props;
