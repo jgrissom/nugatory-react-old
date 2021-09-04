@@ -6,7 +6,8 @@ class Word extends Component {
     return (color === undefined || color === null ? 'black' : color);
   }
   componentDidMount() {
-    console.log(`hello, ${ this.props.word.word }`);
+    const el = document.getElementById(this.props.word.id);
+    console.log(el);
   }
   componentWillUnmount() {
     console.log(`goodbye, ${ this.props.word.word }`);
@@ -14,7 +15,7 @@ class Word extends Component {
   render() { 
     const { onDelete, word } = this.props;
     return (
-      <div onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
+      <div id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
         { word.word }
       </div>
     );
