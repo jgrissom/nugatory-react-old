@@ -4,6 +4,7 @@ class NewWord extends Component {
   state = {
     showForm: false,
   }
+  toggleForm = () => this.setState({ showForm : !this.state.showForm });
   render() { 
     return (
       <div className='New-word'>
@@ -21,10 +22,10 @@ class NewWord extends Component {
                 placeholder="Color"
                 autoComplete="off" />
               <button type="button">Save</button>
-              <button type="button">Cancel</button>
+              <button onClick={this.toggleForm} type="button">Cancel</button>
             </form>
           :
-            <span className='Toggle-form'>New Word</span>
+            <span onClick={this.toggleForm} className='Toggle-form'>New Word</span>
         }
       </div>
     );
