@@ -8,6 +8,7 @@ class NewWord extends Component {
   }
   toggleForm = () => this.setState({ showForm : !this.state.showForm });
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value});
+  saveWord = () => console.log(`word: ${this.state.word}, color: ${this.state.color}`); 
   render() { 
     const { showForm, word, color } = this.state;
     return (
@@ -31,7 +32,7 @@ class NewWord extends Component {
                 onChange={ this.handleChange }
                 placeholder="Color"
                 autoComplete="off" />
-              <button type="button">Save</button>
+              <button onClick={ this.saveWord } type="button">Save</button>
               <button onClick={this.toggleForm} type="button">Cancel</button>
             </form>
           :
