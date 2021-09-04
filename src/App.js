@@ -13,6 +13,9 @@ class App extends Component {
       { id: 3, word: 'lime', color: 'green' },
     ]
   }
+  handleDelete = () => {
+    console.log('delete word');
+  }
   render() { 
     return ( 
       <div className="App">
@@ -22,6 +25,7 @@ class App extends Component {
         { this.state.words.map(word => 
           <Word 
             key={ word.id } 
+            onDelete={ this.handleDelete }
             word={ word.word } 
             color={ word.color } 
           />) }
