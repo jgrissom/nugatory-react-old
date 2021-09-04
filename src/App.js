@@ -18,8 +18,13 @@ const App = () => {
     try {
       await axios.delete(`${apiEndpoint}/${wordId}`);
     } catch(ex) {
-      alert('An error occurred while deleting a word');
-      setWords(originalWords);
+      if (ex.response && ex.response.status === 404) {
+        // word already deleted
+        console.log("The record does not exist - it may have already been deleted");
+      } else { 
+        alert('An error occurred while deleting a word');
+        setWords(originalWords);
+      }
     }
   }
   const handleAdd = async (word, color) => {
