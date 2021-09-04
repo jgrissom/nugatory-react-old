@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 class Word extends Component {
+  wordEl = React.createRef();
+  
   // helper method
   renderColor(color) {
     return (color === undefined || color === null ? 'black' : color);
   }
   componentDidMount() {
-    const el = document.getElementById(this.props.word.id);
-    console.log(el);
+    console.log(this.wordEl.current);
   }
   componentWillUnmount() {
     console.log(`goodbye, ${ this.props.word.word }`);
@@ -15,7 +16,7 @@ class Word extends Component {
   render() { 
     const { onDelete, word } = this.props;
     return (
-      <div id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
+      <div ref={ this.wordEl } id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
         { word.word }
       </div>
     );
