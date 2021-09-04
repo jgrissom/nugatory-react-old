@@ -13,8 +13,8 @@ class App extends Component {
       { id: 3, word: 'lime', color: 'green' },
     ]
   }
-  handleDelete = () => {
-    console.log('delete word');
+  handleDelete = (wordId) => {
+    console.log(`delete word: ${wordId}`);
   }
   render() { 
     return ( 
@@ -25,6 +25,7 @@ class App extends Component {
         { this.state.words.map(word => 
           <Word 
             key={ word.id } 
+            id={ word.id }
             onDelete={ this.handleDelete }
             word={ word.word } 
             color={ word.color } 
