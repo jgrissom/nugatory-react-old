@@ -20,7 +20,10 @@ class App extends Component {
     this.setState({ words:words });
   }
   handleAdd = (word, color) => {
-    console.log(`word: ${word}, color: ${color}`);
+    const { words } = this.state;
+    const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
+    const mutableWords = words.concat({ id: id, word: word, color: color });
+    this.setState({ words:mutableWords });
   }
   componentDidMount() {
     console.log("App mounted");
