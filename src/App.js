@@ -18,6 +18,9 @@ class App extends Component {
     const words = this.state.words.filter(w => w.id !== wordId);
     this.setState({ words:words });
   }
+  componentDidMount() {
+    console.log("App mounted");
+  }
   render() { 
     const { words } = this.state;
     return ( 

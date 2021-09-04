@@ -5,6 +5,12 @@ class Word extends Component {
   renderColor(color) {
     return (color === undefined || color === null ? 'black' : color);
   }
+  componentDidMount() {
+    console.log("Word mounted");
+  }
+  componentWillUnmount() {
+    console.log("Word unmounted");
+  }
   render() { 
     const { onDelete, word } = this.props;
     return (
