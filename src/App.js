@@ -1,6 +1,6 @@
 // Repository:  nugatory-react
 // Author:      Jeff Grissom
-// Version:     4.xx
+// Version:     5.xx
 import React, { Component } from 'react';
 import Word from './components/Word';
 import Counter from './components/Counter';
