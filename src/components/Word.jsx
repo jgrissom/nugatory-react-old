@@ -10,13 +10,14 @@ class Word extends Component {
   // return random number between min & max
   getRandomNumber = (min, max) => Math.random() * (max - min) + min;
   // return random number between 0 and window height
-  getRandomTop = () => parseInt(this.getRandomNumber(0, window.innerHeight));
+  getRandomTop = (height) => parseInt(this.getRandomNumber(0, window.innerHeight - height));
   // return random number between 0 and window width
-  getRandomLeft = () => parseInt(this.getRandomNumber(0, window.innerWidth));
+  getRandomLeft = (width) => parseInt(this.getRandomNumber(0, window.innerWidth - width));
 
   componentDidMount() {
-    this.wordEl.current.style.top = this.getRandomTop() + 'px';
-    this.wordEl.current.style.left = this.getRandomLeft() + 'px';
+    const el = this.wordEl.current;
+    el.style.top = this.getRandomTop(el.clientHeight) + 'px';
+    el.style.left = this.getRandomLeft(el.clientWidth) + 'px';
   }
   componentWillUnmount() {
     console.log(`goodbye, ${ this.props.word.word }`);
