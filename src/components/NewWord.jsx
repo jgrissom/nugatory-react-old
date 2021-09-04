@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NewWord extends Component {
   render() { 
     return (
-      <div>
+      <div className='New-word'>
         <form>
           <input 
             type="text"
@@ -18,7 +18,7 @@ class NewWord extends Component {
           <button type="button">Save</button>
           <button type="button">Cancel</button>
         </form>
-        <span>New Word</span>
+        <span className='Toggle-form'>New Word</span>
       </div>
     );
   }

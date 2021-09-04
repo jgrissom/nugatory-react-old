@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   height: 100%;
+  z-index: 0;
 }
 
 #root {
@@ -17,6 +18,7 @@
   opacity: .75;
   cursor: pointer;
   position: absolute;
+  z-index: 10;
 }
 
 .counter {
@@ -24,4 +26,35 @@
   bottom: 10px;
   right: 10px;
   font-size: 2em;
+}
+
+.New-word {
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+.New-word .Toggle-form {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.New-word button {
+  height: 32px;
+}
+
+.New-word input {
+  height: 26px;
+}
+
+.New-word button, input {
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.New-word input[type="color"] {
+  position: relative;
+  top: 4px;
 }
