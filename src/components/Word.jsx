@@ -6,10 +6,10 @@ class Word extends Component {
     return (color === undefined || color === null ? 'black' : color);
   }
   render() { 
-    console.log(this.props);
+    const { onDelete, word } = this.props;
     return (
-      <div onClick={ () => this.props.onDelete(this.props.word.id) } className='Word' style={{ color:this.renderColor(this.props.word.color) }}>
-        { this.props.word.word }
+      <div onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
+        { word.word }
       </div>
     );
   }
