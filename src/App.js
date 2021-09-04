@@ -2,6 +2,7 @@
 // Author:      Jeff Grissom
 // Version:     6.xx
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Word from './components/Word';
 import Counter from './components/Counter';
 import NewWord from './components/NewWord';
@@ -9,26 +10,27 @@ import './App.css';
 
 const App = () => {
   const [words, setWords] = useState([]);
+  const apiEndpoint = "https://nugatory.azurewebsites.net/api/word";
 
   const handleDelete = (wordId) => {
-    const mutableWords = words.filter(w => w.id !== wordId);
-    setWords(mutableWords);
+    // const mutableWords = words.filter(w => w.id !== wordId);
+    // setWords(mutableWords);
+    console.log(`delete: ${wordId}`);
   }
   const handleAdd = (word, color) => {
-    const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
-    const mutableWords = words.concat({ id: id, word: word, color: color });
-    setWords(mutableWords);
+    // const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
+    // const mutableWords = words.concat({ id: id, word: word, color: color });
+    // setWords(mutableWords);
+    console.log(`word: ${word}, color: ${color}`);
   }
   // this is the functional equivalent to componentDidMount
   useEffect(() => {
     // initial data loaded here
-    let mutableWords = [
-      { id: 1, word: "banana", color: "yellow" },
-      { id: 2, word: "apple", color: "red" },
-      { id: 3, word: "lime", color: "green" },
-      { id: 4, word: "orange", color: "orange" }
-    ]
-    setWords(mutableWords);
+    async function fetchData() {
+      const { data: fetchedWords } = await axios.get(apiEndpoint);
+      setWords(fetchedWords);
+    }
+    fetchData();
   }, []);
   return ( 
     <div className="App">
