@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import Word from './components/Word';
 import Counter from './components/Counter';
+import NewWord from './components/NewWord';
 import './App.css';
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
             onDelete={ this.handleDelete } />
         )}
         <Counter totalWords={ words.length } />
+        <NewWord />
       </div>
      );
   }
