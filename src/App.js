@@ -13,8 +13,15 @@ const App = () => {
   const apiEndpoint = "https://nugatory.azurewebsites.net/api/word";
 
   const handleDelete = async (wordId) => {
+    const originalWords = words;
     setWords(words.filter(w => w.id !== wordId));
-    await axios.delete(`${apiEndpoint}/${wordId}`);
+    try {
+      await axios.delete(`${apiEndpoint}/${wordId}`);
+      throw new console.error('');
+    } catch(ex) {
+      alert('An error occurred while deleting a word');
+      setWords(originalWords);
+    }
   }
   const handleAdd = async (word, color) => {
     const { data: post } = await axios.post(apiEndpoint, { word: word, color: color });
