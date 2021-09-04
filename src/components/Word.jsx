@@ -8,7 +8,7 @@ class Word extends Component {
     return (color === undefined || color === null ? 'black' : color);
   }
   componentDidMount() {
-    console.log(this.wordEl.current);
+    this.wordEl.current.style.color = 'purple';
   }
   componentWillUnmount() {
     console.log(`goodbye, ${ this.props.word.word }`);
