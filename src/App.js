@@ -20,6 +20,9 @@ class App extends Component {
   }
   componentDidMount() {
     console.log("App mounted");
+    this.state.words.forEach(function(word) {
+      console.log(word.color);
+    });
   }
   render() { 
     const { words } = this.state;
