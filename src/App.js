@@ -12,10 +12,9 @@ const App = () => {
   const [words, setWords] = useState([]);
   const apiEndpoint = "https://nugatory.azurewebsites.net/api/word";
 
-  const handleDelete = (wordId) => {
-    // const mutableWords = words.filter(w => w.id !== wordId);
-    // setWords(mutableWords);
-    console.log(`delete: ${wordId}`);
+  const handleDelete = async (wordId) => {
+    await axios.delete(`${apiEndpoint}/${wordId}`);
+    setWords(words.filter(w => w.id !== wordId));
   }
   const handleAdd = async (word, color) => {
     const { data: post } = await axios.post(apiEndpoint, { word: word, color: color });
