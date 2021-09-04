@@ -6,7 +6,13 @@ class NewWord extends Component {
     word: '',
     color: '#000000',
   }
-  toggleForm = () => this.setState({ showForm : !this.state.showForm });
+  toggleForm = () => {
+    const { showForm } = this.state;
+    this.setState({ showForm : !showForm });
+    if (showForm) {
+      this.setState({ word: '', color: '#000000' });
+    }
+  }
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value});
   saveWord = () => {
     const { word, color } = this.state;
@@ -27,6 +33,7 @@ class NewWord extends Component {
                 value={ word }
                 onChange={ this.handleChange }
                 placeholder="Word"
+                autoFocus
                 autoComplete="off" />
               <input 
                 type="color"
