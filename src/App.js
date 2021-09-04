@@ -19,6 +19,9 @@ class App extends Component {
     const words = this.state.words.filter(w => w.id !== wordId);
     this.setState({ words:words });
   }
+  handleAdd = (word, color) => {
+    console.log(`word: ${word}, color: ${color}`);
+  }
   componentDidMount() {
     console.log("App mounted");
   }
@@ -36,7 +39,7 @@ class App extends Component {
             onDelete={ this.handleDelete } />
         )}
         <Counter totalWords={ words.length } />
-        <NewWord />
+        <NewWord onAdd={ this.handleAdd } />
       </div>
      );
   }
