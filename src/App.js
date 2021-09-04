@@ -1,6 +1,6 @@
 // Repository:  nugatory-react
 // Author:      Jeff Grissom
-// Version:     5.xx
+// Version:     6.xx
 import React, { useState, useEffect } from 'react';
 import Word from './components/Word';
 import Counter from './components/Counter';
