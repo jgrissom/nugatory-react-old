@@ -17,7 +17,6 @@ const App = () => {
     setWords(words.filter(w => w.id !== wordId));
     try {
       await axios.delete(`${apiEndpoint}/${wordId}`);
-      throw new console.error('');
     } catch(ex) {
       alert('An error occurred while deleting a word');
       setWords(originalWords);
