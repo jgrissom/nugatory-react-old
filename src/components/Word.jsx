@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Word extends Component {
   state = {
-    word: 'banana',
-    color: 'yellow',
+    word: this.props.word,
+    color: this.props.color,
   }
   // helper method
   renderColor(color) {
