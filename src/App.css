@@ -17,3 +17,10 @@
   opacity: .75;
   cursor: pointer;
 }
+
+.counter {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 2em;
+}

@@ -2,8 +2,9 @@
 // Author:      Jeff Grissom
 // Version:     2.xx
 import React, { Component } from 'react';
-import './App.css';
 import Word from './components/Word';
+import Counter from './components/Counter';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -27,8 +28,9 @@ class App extends Component {
           <Word 
             key={ word.id } 
             word={ word } 
-            onDelete={ this.handleDelete }
-          />) }
+            onDelete={ this.handleDelete } />
+        )}
+        <Counter totalWords={ this.state.words.length } />
       </div>
      );
   }
