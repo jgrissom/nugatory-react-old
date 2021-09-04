@@ -14,7 +14,8 @@ class App extends Component {
     ]
   }
   handleDelete = (wordId) => {
-    console.log(`delete word: ${wordId}`);
+    const words = this.state.words.filter(w => w.id !== wordId);
+    this.setState({ words:words });
   }
   render() { 
     return ( 
