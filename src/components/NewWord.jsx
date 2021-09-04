@@ -36,7 +36,12 @@ class NewWord extends Component {
                 onChange={ this.handleChange }
                 placeholder="Color"
                 autoComplete="off" />
-              <button onClick={ this.saveWord } type="button">Save</button>
+              <button 
+                disabled={ word.trim().length === 0 } 
+                onClick={ this.saveWord } 
+                type="button">
+                Save
+              </button>
               <button onClick={this.toggleForm} type="button">Cancel</button>
             </form>
           :
