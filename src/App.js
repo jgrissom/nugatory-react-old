@@ -19,18 +19,19 @@ class App extends Component {
     this.setState({ words:words });
   }
   render() { 
+    const { words } = this.state;
     return ( 
       <div className="App">
         <header className="App-header">
           nugatory
         </header>
-        { this.state.words.map(word => 
+        { words.map(word => 
           <Word 
             key={ word.id } 
             word={ word } 
             onDelete={ this.handleDelete } />
         )}
-        <Counter totalWords={ this.state.words.length } />
+        <Counter totalWords={ words.length } />
       </div>
      );
   }
