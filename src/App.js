@@ -26,10 +26,8 @@ class App extends Component {
         { this.state.words.map(word => 
           <Word 
             key={ word.id } 
-            id={ word.id }
+            word={ word } 
             onDelete={ this.handleDelete }
-            word={ word.word } 
-            color={ word.color } 
           />) }
       </div>
      );

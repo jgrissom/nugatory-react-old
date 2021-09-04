@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Word extends Component {
   state = {
-    word: this.props.word,
-    color: this.props.color,
+    word: this.props.word.word,
+    color: this.props.word.color,
   }
   // helper method
   renderColor(color) {
@@ -12,7 +12,7 @@ class Word extends Component {
   render() { 
     console.log(this.props);
     return (
-      <div onClick={ () => this.props.onDelete(this.props.id) } className='Word' style={{ color:this.renderColor(this.state.color) }}>
+      <div onClick={ () => this.props.onDelete(this.props.word.id) } className='Word' style={{ color:this.renderColor(this.state.color) }}>
         { this.state.word }
       </div>
     );
