@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class NewWord extends Component {
+const NewWord = props => {
   state = {
     showForm: false,
     word: '',
