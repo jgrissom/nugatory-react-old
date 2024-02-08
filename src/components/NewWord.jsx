@@ -6,12 +6,10 @@ const NewWord = props => {
   const [showForm, setShowForm] = useState(false);
 
   const saveWord = () => {
-    const { word, color } = this.state;
     this.props.onAdd(word, color);
     // this.toggleForm();
   } 
   render() { 
-    const { showForm, word, color } = this.state;
     return (
       <div className='New-word'>
         {
