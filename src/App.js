@@ -20,6 +20,17 @@ const App = () => {
     const mutableWords = words.concat({ id: id, word: word, color: color });
     setWords(mutableWords);
   }
+  // this is the functional equivalent to componentDidMount
+  useEffect(() => {
+    // initial data loaded here
+    let mutableWords = [
+      { id: 1, word: "banana", color: "yellow" },
+      { id: 2, word: "apple", color: "red" },
+      { id: 3, word: "lime", color: "green" },
+      { id: 4, word: "orange", color: "orange" }
+    ]
+    setWords(mutableWords);
+  }, []);
   return ( 
     <div className="App">
       <header className="App-header">
