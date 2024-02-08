@@ -12,13 +12,13 @@ const App = () => {
   const [words, setWords] = useState([]);
 
   const handleDelete = (wordId) => {
-    const words = words.filter(w => w.id !== wordId);
-    this.setState({ words:words });
+    const mutableWords = words.filter(w => w.id !== wordId);
+    setWords(mutableWords);
   }
   const handleAdd = (word, color) => {
     const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
     const mutableWords = words.concat({ id: id, word: word, color: color });
-    this.setState({ words:mutableWords });
+    setWords(mutableWords);
   }
   componentDidMount() {
     console.log("App mounted");
