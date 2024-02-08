@@ -7,7 +7,7 @@ const NewWord = props => {
 
   const saveWord = () => {
     props.onAdd(word, color);
-    // this.toggleForm();
+    setShowForm(false);
   } 
   return (
     <div className='New-word'>
