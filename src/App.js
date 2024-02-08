@@ -33,10 +33,10 @@ const App = () => {
           <Word 
             key={ word.id } 
             word={ word } 
-            onDelete={ this.handleDelete } />
+            onDelete={ handleDelete } />
         )}
         <Counter totalWords={ words.length } />
-        <NewWord onAdd={ this.handleAdd } />
+        <NewWord onAdd={ handleAdd } />
       </div>
      );
   }
