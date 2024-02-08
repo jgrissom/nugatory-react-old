@@ -20,7 +20,7 @@ const NewWord = props => {
                 id="word"
                 name="word"
                 value={ word }
-                onChange={ (e) => this.setState({ [e.target.name]: e.target.value}) }
+                onChange={ (e) => setWord(e.target.value) }
                 placeholder="Word"
                 autoFocus
                 autoComplete="off" />
@@ -29,7 +29,7 @@ const NewWord = props => {
                 id="color"
                 name="color"
                 value={ color }
-                onChange={ (e) => this.setState({ [e.target.name]: e.target.value}) }
+                onChange={ (e) => setColor(e.target.value) }
                 placeholder="Color"
                 autoComplete="off" />
               <button 
@@ -38,10 +38,10 @@ const NewWord = props => {
                 type="button">
                 Save
               </button>
-              <button onClick={ () => this.setState({ showForm : false }) } type="button">Cancel</button>
+              <button onClick={ () => setShowForm(false) } type="button">Cancel</button>
             </form>
           :
-            <span onClick={ () => this.setState({ showForm : true }) } className='Toggle-form'>New Word</span>
+            <span onClick={ () => setShowForm(true) } className='Toggle-form'>New Word</span>
         }
       </div>
     );
