@@ -1,13 +1,13 @@
 // Repository:  nugatory-react
 // Author:      Jeff Grissom
 // Version:     4.xx
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Word from './components/Word';
 import Counter from './components/Counter';
 import NewWord from './components/NewWord';
 import './App.css';
 
-class App extends Component {
+const App = () => {
   state = {
     words: [
       { id: 1, word: 'banana', color: 'yellow' },
