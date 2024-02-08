@@ -9,6 +9,13 @@ const NewWord = props => {
     props.onAdd(word, color);
     setShowForm(false);
   } 
+  useEffect(() => {
+    // this "hook" is called whenever showForm value changes
+    if (showForm) {
+      setWord('');
+      setColor('#000000');
+    }
+  }, [showForm])  
   return (
     <div className='New-word'>
       {
