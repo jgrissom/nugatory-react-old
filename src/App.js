@@ -12,11 +12,10 @@ const App = () => {
   const [words, setWords] = useState([]);
 
   const handleDelete = (wordId) => {
-    const words = this.state.words.filter(w => w.id !== wordId);
+    const words = words.filter(w => w.id !== wordId);
     this.setState({ words:words });
   }
   const handleAdd = (word, color) => {
-    const { words } = this.state;
     const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
     const mutableWords = words.concat({ id: id, word: word, color: color });
     this.setState({ words:mutableWords });
@@ -25,7 +24,6 @@ const App = () => {
     console.log("App mounted");
   }
   render() { 
-    const { words } = this.state;
     return ( 
       <div className="App">
         <header className="App-header">
