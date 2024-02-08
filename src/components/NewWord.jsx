@@ -5,7 +5,7 @@ const NewWord = props => {
   const [color, setColor] = useState('#000000');
   const [showForm, setShowForm] = useState(false);
 
-  saveWord = () => {
+  const saveWord = () => {
     const { word, color } = this.state;
     this.props.onAdd(word, color);
     // this.toggleForm();
