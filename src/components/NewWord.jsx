@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const NewWord = props => {
-  state = {
-    showForm: false,
-    word: '',
-    color: '#000000',
-  }
+  const [word, setWord] = useState('');
+  const [color, setColor] = useState('#000000');
+  const [showForm, setShowForm] = useState(false);
+
   saveWord = () => {
     const { word, color } = this.state;
     this.props.onAdd(word, color);
