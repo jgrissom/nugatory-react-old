@@ -4,11 +4,11 @@ const Word = props => {
   const wordEl = useRef();
   
   // helper method
-  renderColor(color) {
+  const renderColor = (color) => {
     return (color === undefined || color === null ? 'black' : color);
   }
   // return random integer between min & max
-  getRandomInt = (min, max) => parseInt(Math.random() * (max - min) + min);
+  const getRandomInt = (min, max) => parseInt(Math.random() * (max - min) + min);
  
   componentDidMount() {
     const el = this.wordEl.current;
