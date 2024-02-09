@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 
 const Word = props => {
   const wordEl = useRef();
+  const { onDelete, word } = this.props;
   
   // helper method
   const renderColor = (color) => {
@@ -24,15 +25,12 @@ const Word = props => {
       console.log(`goodbye, ${props.word.word}`);
     }
   }, [wordEl, props.word.word])
-
-  render() { 
-    const { onDelete, word } = this.props;
-    return (
-      <div ref={ this.wordEl } id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
-        { word.word }
-      </div>
-    );
-  }
+    
+  return (
+    <div ref={ this.wordEl } id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
+      { word.word }
+    </div>
+  );
 }
 
 export default Word
