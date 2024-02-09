@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 
-class Word extends Component {
+const Word = props => {
   wordEl = React.createRef();
   
   // helper method
