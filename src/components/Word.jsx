@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 
 const Word = props => {
   const wordEl = useRef();
-  const { onDelete, word } = this.props;
+  const { onDelete, word } = props;
   
   // helper method
   const renderColor = (color) => {
@@ -27,7 +27,7 @@ const Word = props => {
   }, [wordEl, props.word.word])
     
   return (
-    <div ref={ this.wordEl } id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:this.renderColor(word.color) }}>
+    <div ref={ wordEl } id={ word.id } onClick={ () => onDelete(word.id) } className='Word' style={{ color:renderColor(word.color) }}>
       { word.word }
     </div>
   );
