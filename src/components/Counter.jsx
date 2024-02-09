@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Counter extends Component {
+const Counter = props => {
     render() { 
         return ( <div className='counter'>words: { this.props.totalWords }</div> );
     }
