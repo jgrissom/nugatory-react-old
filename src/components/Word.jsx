@@ -10,14 +10,21 @@ const Word = props => {
   // return random integer between min & max
   const getRandomInt = (min, max) => parseInt(Math.random() * (max - min) + min);
  
-  componentDidMount() {
-    const el = this.wordEl.current;
-    el.style.top = this.getRandomInt(0, window.innerHeight - el.clientHeight) + 'px';
-    el.style.left = this.getRandomInt(0, window.innerWidth - el.clientWidth) + 'px';
-  }
-  componentWillUnmount() {
-    console.log(`goodbye, ${ this.props.word.word }`);
-  }
+  // this is equivalent to componentDidUpdate - however, it will only be called
+  // on wordEl or word.word updates per the dependencies array passed as 2nd arg.
+  // useLayoutEffect should only be used in place of useEffect when necessary,
+  // in this case it is needed to avoid component render flickering
+  useLayoutEffect(() => {
+    const el = wordEl.current;
+    el.style.top = getRandomInt(0, window.innerHeight - el.clientHeight) + 'px';
+    el.style.left = getRandomInt(0, window.innerWidth - el.clientWidth) + 'px';
+    console.log(`hello, ${props.word.word}`);
+    // this is equivalent to componentWillUnmount
+    return () => {
+      console.log(`goodbye, ${props.word.word}`);
+    }
+  }, [wordEl, props.word.word])
+
   render() { 
     const { onDelete, word } = this.props;
     return (
