@@ -4,8 +4,8 @@ function NewWord() {
   const [word, setWord] = useState('');
   const [color, setColor] = useState('#000000');
   const [showForm, setShowForm] = useState(false);
-  
-  saveWord = () => {
+
+  function saveWord() {
     const { word, color } = this.state;
     this.props.onAdd(word, color);
   } 
