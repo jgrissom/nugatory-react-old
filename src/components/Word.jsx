@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 
 function Word(props) {
-  wordEl = React.createRef();
+  const wordEl = useRef();
   
   // helper method
   renderColor(color) {
