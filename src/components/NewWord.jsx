@@ -7,6 +7,7 @@ function NewWord(props) {
 
   function saveWord() {
     props.onAdd(word, color);
+    setShowForm(false);
   } 
   return (
     <div className='New-word'>
