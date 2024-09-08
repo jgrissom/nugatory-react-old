@@ -10,11 +10,11 @@ import './App.css';
 function App() {
   // create "state" array to store words
   const [words, setWords] = useState([]);
-  handleDelete = (wordId) => {
+  function handleDelete(wordId) {
     const words = this.state.words.filter(w => w.id !== wordId);
     this.setState({ words:words });
   }
-  handleAdd = (word, color) => {
+  function handleAdd(word, color) {
     const { words } = this.state;
     const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
     const mutableWords = words.concat({ id: id, word: word, color: color });
