@@ -13,7 +13,6 @@ class NewWord extends Component {
       this.setState({ word: '', color: '#000000' });
     }
   }
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value});
   saveWord = () => {
     const { word, color } = this.state;
     this.props.onAdd(word, color);
@@ -31,7 +30,7 @@ class NewWord extends Component {
                 id="word"
                 name="word"
                 value={ word }
-                onChange={ this.handleChange }
+                onChange={ (e) => this.setState({ [e.target.name]: e.target.value}) }
                 placeholder="Word"
                 autoFocus
                 autoComplete="off" />
@@ -40,7 +39,7 @@ class NewWord extends Component {
                 id="color"
                 name="color"
                 value={ color }
-                onChange={ this.handleChange }
+                onChange={ (e) => this.setState({ [e.target.name]: e.target.value}) }
                 placeholder="Color"
                 autoComplete="off" />
               <button 
