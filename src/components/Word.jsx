@@ -7,17 +7,13 @@ class Word extends Component {
   renderColor(color) {
     return (color === undefined || color === null ? 'black' : color);
   }
-  // return random number between min & max
-  getRandomNumber = (min, max) => Math.random() * (max - min) + min;
-  // return random number between 0 and window height
-  getRandomTop = (height) => parseInt(this.getRandomNumber(0, window.innerHeight - height));
-  // return random number between 0 and window width
-  getRandomLeft = (width) => parseInt(this.getRandomNumber(0, window.innerWidth - width));
+  // return random integer between min & max
+  getRandomInt = (min, max) => parseInt(Math.random() * (max - min) + min);
 
   componentDidMount() {
     const el = this.wordEl.current;
-    el.style.top = this.getRandomTop(el.clientHeight) + 'px';
-    el.style.left = this.getRandomLeft(el.clientWidth) + 'px';
+    el.style.top = this.getRandomInt(0, window.innerHeight - el.clientHeight) + 'px';
+    el.style.left = this.getRandomInt(0, window.innerWidth - el.clientWidth) + 'px';
   }
   componentWillUnmount() {
     console.log(`goodbye, ${ this.props.word.word }`);
