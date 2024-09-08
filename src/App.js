@@ -8,13 +8,8 @@ import NewWord from './components/NewWord';
 import './App.css';
 
 function App() {
-  state = {
-    words: [
-      { id: 1, word: 'banana', color: 'yellow' },
-      { id: 2, word: 'apple', color: 'red' },
-      { id: 3, word: 'lime', color: 'green' },
-    ]
-  }
+  // create "state" array to store words
+  const [words, setWords] = useState([]);
   handleDelete = (wordId) => {
     const words = this.state.words.filter(w => w.id !== wordId);
     this.setState({ words:words });
