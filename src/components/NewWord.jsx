@@ -6,17 +6,9 @@ class NewWord extends Component {
     word: '',
     color: '#000000',
   }
-  toggleForm = () => {
-    const { showForm } = this.state;
-    this.setState({ showForm : !showForm });
-    if (showForm) {
-      this.setState({ word: '', color: '#000000' });
-    }
-  }
   saveWord = () => {
     const { word, color } = this.state;
     this.props.onAdd(word, color);
-    this.toggleForm();
   } 
   render() { 
     const { showForm, word, color } = this.state;
@@ -48,10 +40,10 @@ class NewWord extends Component {
                 type="button">
                 Save
               </button>
-              <button onClick={this.toggleForm} type="button">Cancel</button>
+              <button onClick={ () => this.setState({ showForm : false }) } type="button">Cancel</button>
             </form>
           :
-            <span onClick={this.toggleForm} className='Toggle-form'>New Word</span>
+            <span onClick={ () => this.setState({ showForm : true }) } className='Toggle-form'>New Word</span>
         }
       </div>
     );
