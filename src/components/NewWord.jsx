@@ -6,7 +6,7 @@ function NewWord() {
   const [showForm, setShowForm] = useState(false);
 
   function saveWord() {
-    this.props.onAdd(word, color);
+    props.onAdd(word, color);
   } 
   render() { 
     return (
@@ -33,7 +33,7 @@ function NewWord() {
                 autoComplete="off" />
               <button 
                 disabled={ word.trim().length === 0 } 
-                onClick={ this.saveWord } 
+                onClick={ saveWord } 
                 type="button">
                 Save
               </button>
