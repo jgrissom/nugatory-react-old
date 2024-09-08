@@ -19,26 +19,21 @@ function App() {
     const mutableWords = words.concat({ id: id, word: word, color: color });
     setWords(mutableWords);
   }
-  componentDidMount() {
-    console.log("App mounted");
-  }
-  render() { 
-    return ( 
-      <div className="App">
-        <header className="App-header">
-          nugatory
-        </header>
-        { words.map(word => 
-          <Word 
-            key={ word.id } 
-            word={ word } 
-            onDelete={ handleDelete } />
-        )}
-        <Counter totalWords={ words.length } />
-        <NewWord onAdd={ handleAdd } />
-      </div>
-     );
-  }
+  return ( 
+    <div className="App">
+    <header className="App-header">
+        nugatory
+    </header>
+    { words.map(word => 
+        <Word 
+        key={ word.id } 
+        word={ word } 
+        onDelete={ handleDelete } />
+    )}
+    <Counter totalWords={ words.length } />
+    <NewWord onAdd={ handleAdd } />
+    </div>
+  );
 }
  
 export default App;
